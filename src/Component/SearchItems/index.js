@@ -1,11 +1,11 @@
 import './index.css'
 
 const SearchItems = props => {
-  const {eachItemDetail, deleteItemFromIdFunCall} = props
+  const {eachItemDetail, callingDeleteFunFromSearchPage} = props
   const {id, timeAccessed, logoUrl, title, domainUrl} = eachItemDetail
 
   const deleteTheItem = () => {
-    deleteItemFromIdFunCall(id)
+    callingDeleteFunFromSearchPage(id)
   }
 
   return (

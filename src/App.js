@@ -76,19 +76,9 @@ const initialHistoryList = [
     domainUrl: 'google.com',
   },
 ]
-let filteredListAfterClickOnDelete = initialHistoryList
-
-const deleteItemFromIdFunCall = uniqueNum => {
-  filteredListAfterClickOnDelete = initialHistoryList.filter(
-    eachItem => eachItem.id !== uniqueNum,
-  )
-}
 
 const App = () => (
-  <SearchPageComponent
-    filteredListAfterClickOnDelete={filteredListAfterClickOnDelete}
-    deleteItemFromIdFunCall={deleteItemFromIdFunCall}
-  />
+  <SearchPageComponent initialHistoryList={initialHistoryList} />
 )
 
 export default App

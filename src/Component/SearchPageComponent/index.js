@@ -9,14 +9,18 @@ class SearchPageComponent extends Component {
     this.setState({inputTyped: event.target.value})
   }
 
+  callingDeleteFunFromSearchPage = uniqueId => {
+    console.log(uniqueId)
+  }
+
   render() {
     const {inputTyped} = this.state
-    const {filteredListAfterClickOnDelete} = this.props
+    const {initialHistoryList} = this.props
 
-    const filterListItemOnSearch = filteredListAfterClickOnDelete.filter(
-      eachList =>
-        eachList.title.toLowerCase().includes(inputTyped.toLowerCase()),
+    const filterListItemOnSearch = initialHistoryList.filter(eachList =>
+      eachList.title.toLowerCase().includes(inputTyped.toLowerCase()),
     )
+
     let whatsNeedToShow = ''
     if (filterListItemOnSearch.length === 0) {
       whatsNeedToShow = (
@@ -24,7 +28,11 @@ class SearchPageComponent extends Component {
       )
     } else {
       whatsNeedToShow = filterListItemOnSearch.map(eachItem => (
-        <SearchItems eachItemDetail={eachItem} key={eachItem.id} />
+        <SearchItems
+          callingDeleteFunFromSearchPage={this.callingDeleteFunFromSearchPage}
+          eachItemDetail={eachItem}
+          key={eachItem.id}
+        />
       ))
     }
     return (
