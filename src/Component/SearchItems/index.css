@@ -1,0 +1,69 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto';
+}
+.complete-list-content-with-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.complete-content-expect-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px;
+}
+.list-date-time {
+  padding: 10px 0px 10px 0px;
+  color: #64748b;
+  font-weight: bold;
+  font-size: 18px;
+}
+.logo-and-domain-website-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.domain-logo-style {
+  width: 40px;
+  padding-right: 10px;
+}
+.domain-title-style {
+  font-weight: bold;
+  color: #475569;
+}
+.website-style {
+  color: #64748b;
+  font-weight: 500;
+}
+.delete-icon-style {
+  padding-top: 35px;
+  cursor: pointer;
+}
+
+@media all and (min-width: 786px) {
+  .complete-content-expect-delete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .list-date-time {
+    padding-right: 15px;
+  }
+  .domain-title-and-website {
+    display: flex;
+    flex-direction: row;
+  }
+  .domain-title-style {
+    margin-right: 30px;
+  }
+  .delete-icon-style {
+    padding-top: 0px;
+  }
+}
