@@ -3,20 +3,14 @@
   margin: 0px;
   font-family: 'Roboto';
 }
-.complete-list-content-with-delete {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-}
-.complete-content-expect-delete {
+.complete-list-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   margin: 20px;
 }
+
 .list-date-time {
   padding: 10px 0px 10px 0px;
   color: #64748b;
@@ -41,17 +35,24 @@
   color: #64748b;
   font-weight: 500;
 }
+.list-content-and-delete-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .delete-icon-style {
-  padding-top: 35px;
+  border: none;
+  background: none;
   cursor: pointer;
 }
-
 @media all and (min-width: 786px) {
-  .complete-content-expect-delete {
+  .complete-list-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 20px;
   }
   .list-date-time {
     padding-right: 15px;
@@ -62,8 +63,5 @@
   }
   .domain-title-style {
     margin-right: 30px;
-  }
-  .delete-icon-style {
-    padding-top: 0px;
   }
 }

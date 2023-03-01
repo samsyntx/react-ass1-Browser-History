@@ -1,16 +1,16 @@
 import './index.css'
 
 const SearchItems = props => {
-  const {eachItemDetail, callingDeleteFunFromSearchPage} = props
+  const {eachItemDetail, deletingParticularItemFromList} = props
   const {id, timeAccessed, logoUrl, title, domainUrl} = eachItemDetail
 
-  const deleteTheItem = () => {
-    callingDeleteFunFromSearchPage(id)
+  const deleteItemFunction = () => {
+    deletingParticularItemFromList(id)
   }
 
   return (
-    <li className="complete-list-content-with-delete">
-      <div className="complete-content-expect-delete">
+    <li className="list-content-and-delete-button">
+      <div className="complete-list-content">
         <p className="list-date-time">{timeAccessed}</p>
         <div className="logo-and-domain-website-container">
           <img className="domain-logo-style" src={logoUrl} alt="domain logo" />
@@ -20,12 +20,17 @@ const SearchItems = props => {
           </div>
         </div>
       </div>
-      <img
+      <button
+        data-testid="delete"
+        onClick={deleteItemFunction}
         className="delete-icon-style"
-        src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
-        alt="delete"
-        onClick={deleteTheItem}
-      />
+        type="button"
+      >
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
+          alt="delete"
+        />
+      </button>
     </li>
   )
 }
